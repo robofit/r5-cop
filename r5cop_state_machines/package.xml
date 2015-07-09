@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>r5cop_state_machines</name>
+  <version>0.0.0</version>
+  <description>The r5cop_state_machines package</description>
+
+  <maintainer email="imaterna@fit.vutbr.cz">Zdenek Materna</maintainer>
+
+  <license>LGPL</license>
+
+  <url type="repository">https://github.com/robofit/r5-cop</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>tf</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>tf</run_depend>
+
+</package>
