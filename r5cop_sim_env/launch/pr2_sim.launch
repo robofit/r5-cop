@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="port"/>
+  <env name="GAZEBO_MASTER_URI" value="http://localhost:$(arg port)"/>
+
+  <include file="$(find r5cop_sim_env)/launch/fit_lab.launch" />
+
+  <include file="$(find pr2_gazebo)/launch/pr2.launch" />
+  <include file="$(find r5cop_navigation)/launch/pr2_nav.launch">
+  
+</launch>

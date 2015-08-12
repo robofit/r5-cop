@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="port"/>
+  <env name="GAZEBO_MASTER_URI" value="http://localhost:$(arg port)"/>
+
+  <include file="$(find r5cop_sim_env)/launch/fit_lab.launch"/>
+
+  <!-- upload URDF description -->
+  <include file="$(find toad_description)/launch/upload.launch" />
+  
+  <!-- publish TFs for static links -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0"/>
+    <param name="tf_prefix" type="string" value=""/>
+  </node>
+  
+  <!--node pkg="tf" type="static_transform_publisher" name="static_tf_pub" args="0 0 0 0 0 0 /base_link /base_footprint 100"/-->
+  
+<node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf" output="screen">
+  <param name="output_frame" value="odom"/>
+  <param name="base_footprint_frame" value="base_link"/>
+  <param name="freq" value="20.0"/>
+  <param name="debug" value="true"/>
+  <param name="sensor_timeout" value="5.0"/>  
+  <param name="odom_used" value="true"/>
+  <param name="imu_used" value="false"/>
+  <param name="vo_used" value="false"/>
+  <param name="gps_used" value="false"/>
+  <param name="publish_tf" value="true"/>
+  <param name="self_diagnose" value="true"/>
+</node>
+  
+  <!-- spawn robot using urdf description -->
+  <node name="spawn_robot_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model toad -x 2.0 -y 1.0 -z 0.0" respawn="false" output="screen" />
+  
+  <include file="$(find r5cop_navigation)/launch/toad_nav.launch"/>
+  
+</launch>
