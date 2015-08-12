@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="lund_lab">
+  <model name="fit_lab">
     <static>true</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
@@ -8,7 +8,7 @@
         <geometry>
           <mesh>
             <!--uri>model://lund_lab/meshes/lund_lab.dae</uri-->
-            <uri>model://lund_lab/meshes/fit_lab_map.dae</uri>
+            <uri>model://fit_lab/meshes/fit_lab_map.dae</uri>
             <!--uri>model://lund_lab/meshes/gas_station.dae</uri-->
             <!--mesh filename="package://awc_description/meshes/lund_lab.dae" scale="0.0254 0.0254 0.0254"/-->
           </mesh>
@@ -20,7 +20,7 @@
           <mesh>
             <!--uri>model://gas_station/meshes/gas_station.dae</uri-->
             <!--suri>model://lund_lab/meshes/lund_lab.dae</uri--> 
-            <uri>model://lund_lab/meshes/fit_lab_map.dae</uri> 
+            <uri>model://fit_lab/meshes/fit_lab_map.dae</uri> 
             <!--uri>model://lund_lab/meshes/gas_station.dae</uri-->
           </mesh>
         </geometry>

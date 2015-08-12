@@ -8,7 +8,7 @@
       			<uri>model://sun</uri>
     		</include>
                 <include>
-                       <uri>model://lund_lab</uri>
+                       <uri>model://fit_lab</uri>
       			<name>fit_lab_map</name>
       			<pose> 0 0 0	 0 0 0</pose> 
     		</include>
