@@ -1,0 +1,16 @@
+<?xml version = "1.0"?>
+<sdf version="1.4">
+ 	<world name="fit_lab">
+		<include>
+			<uri>model://ground_plane</uri>
+		</include>
+    		<include>
+      			<uri>model://sun</uri>
+    		</include>
+                <include>
+                       <uri>model://lund_lab</uri>
+      			<name>fit_lab_map</name>
+      			<pose> 0 0 0	 0 0 0</pose> 
+    		</include>
+  </world>
+</sdf>
