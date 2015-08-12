@@ -7,6 +7,6 @@
   <include file="$(find r5cop_sim_env)/launch/fit_lab.launch" />
 
   <include file="$(find pr2_gazebo)/launch/pr2.launch" />
-  <include file="$(find r5cop_navigation)/launch/pr2_nav.launch">
+  <include file="$(find r5cop_navigation)/launch/pr2_nav.launch"/>
   
 </launch>
