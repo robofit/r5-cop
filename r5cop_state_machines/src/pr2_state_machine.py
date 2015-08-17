@@ -100,6 +100,8 @@ class PR2RobotBrain():
 def main():
   
     rospy.init_node('pr2_state_machine')
+    brain = PR2RobotBrain()
+    brain.getReady()
     
     area_to_explore = PolygonStamped()
     center_point = PointStamped()
