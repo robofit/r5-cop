@@ -18,7 +18,7 @@ class robotPosition():
             ts = rospy.time.now()
             
         ps = PoseStamped()
-        ps.header.timestamp = ts
+        ps.header.stamp = ts
         ps.header.frame_id = self.robot_link
         ps.pose.position.x = 0
         ps.pose.position.y = 0
@@ -30,7 +30,7 @@ class robotPosition():
         
         try:
         
-            self.tfl.waitForTransform(self.robot_link, self.world_link, rospy.Duration(1.0))
+            self.tfl.waitForTransform(self.robot_link, self.world_link, ts, rospy.Duration(1.0))
             ps = self.tfl.transformPose(self.world_link, ps)
             
         except tf.Exception:
