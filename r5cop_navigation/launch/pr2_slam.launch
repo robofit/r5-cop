@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+<!--include file="$(find pr2_navigation_slam)/rviz/rviz_move_base_slam.launch"/-->
+<include file="$(find r5cop_navigation)/launch/pr2_move_base.xml"/>
+<include file="$(find pr2_navigation_slam)/slam_gmapping.xml"/>
+
+</launch>

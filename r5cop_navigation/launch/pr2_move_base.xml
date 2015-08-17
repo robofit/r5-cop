@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="move_base" type="move_base" name="move_base_node" output="screen">
+    <remap from="odom" to="/base_odometry/odom" />
+    <remap from="cmd_vel" to="/base_controller/command" />
+
+    <!-- Use the dwa local planner for the PR2 -->
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+
+    <!-- Load common configuration files -->
+    <rosparam file="$(find pr2_navigation_config)/move_base/move_base_params.yaml" command="load" />
+    <rosparam file="$(find r5cop_navigation)/config/pr2_sim_costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find r5cop_navigation)/config/pr2_sim_costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find pr2_navigation_config)/move_base/dwa_local_planner.yaml" command="load" ns="DWAPlannerROS" />
+    <rosparam file="$(find pr2_navigation_config)/move_base/recovery_behaviors.yaml" command="load" />
+
+    <!-- Load global navigation specific parameters -->
+    <rosparam file="$(find r5cop_navigation)/config/pr2_sim_global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find r5cop_navigation)/config/pr2_sim_local_costmap_params.yaml" command="load"  />
+  </node>
+</launch>

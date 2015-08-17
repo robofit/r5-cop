@@ -4,6 +4,13 @@ project(r5cop_state_machines)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   tf
+  smach
+  smach_ros
+  actionlib
+  actionlib_msgs
+  moveit_commander
+  moveit_msgs
+  geometry_msgs
 )
 
 
