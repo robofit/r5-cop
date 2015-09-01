@@ -23,6 +23,11 @@ sink1:
   type: TablePublisher
   module: 'object_recognition_tabletop'
   inputs: [source1]
+  
+sink2:
+  type: Publisher
+  module: 'object_recognition_ros.io'
+  inputs: [source1]
 
 pipeline1:
   type: TabletopTableDetector
@@ -31,8 +36,19 @@ pipeline1:
   outputs: [sink1]
   parameters:
     table_detector:
-      min_table_size: 4000
-      plane_threshold: 0.01
-    #clusterer:
-    #  table_z_filter_max: 0.35
-    #  table_z_filter_min: 0.025
+        min_table_size: 4000
+        plane_threshold: 0.01
+
+pipeline2:
+  type: TabletopObjectDetector
+  module: 'object_recognition_tabletop'
+  inputs: [source1, pipeline1]
+  outputs: [sink2]
+  parameters:
+    object_ids: 'all'
+    tabletop_object_ids: 'REDUCED_MODEL_SET'
+    threshold: 0.85
+    db:
+      type: CouchDB
+      root: http://localhost:5984
+      collection: object_recognition
