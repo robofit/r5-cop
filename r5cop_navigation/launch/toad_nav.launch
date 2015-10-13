@@ -40,6 +40,6 @@
   <param name="recovery_alpha_fast" value="0.0"/>
 </node>
 
-<!--include file="$(find r5cop_navigation)/launch/toad_move_base.xml"/-->
+<include file="$(find toad_navigation_global)/launch/move_base.launch"/>
 
 </launch>

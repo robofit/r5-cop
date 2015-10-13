@@ -4,8 +4,10 @@ project(r5cop_sim_env)
 find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
   urdf
+  roslaunch
 )
 
 catkin_package()
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
+roslaunch_add_file_check(launch)

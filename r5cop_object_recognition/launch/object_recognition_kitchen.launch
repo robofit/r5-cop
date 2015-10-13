@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="detect_table_node" pkg="object_recognition_core" type="detection" output="screen" args="-c $(find r5cop_object_recognition)/conf/detection.table.ros.ork"/>
+
+</launch>

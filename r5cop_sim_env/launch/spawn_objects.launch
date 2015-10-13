@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-sdf -database cafe_table -x 1.8 -model cafe_table" respawn="false" output="screen" />
+
+  <node name="spawn_coke" pkg="gazebo_ros" type="spawn_model" args="-sdf -database coke_can -x 1.8 -z 1.7 -model coke_can" respawn="false" output="screen" />
+  
+  <node name="spawn_table2" pkg="gazebo_ros" type="spawn_model" args="-sdf -database cafe_table -x 3.0 -y 2.5 -model cafe_table2" respawn="false" output="screen" />
+  
+  <node name="spawn_coke2" pkg="gazebo_ros" type="spawn_model" args="-sdf -database coke_can -x 3.0 -y 2.5 -z 1.7 -model coke_can2" respawn="false" output="screen" />
+  
+</launch>

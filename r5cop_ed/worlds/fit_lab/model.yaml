@@ -1,0 +1,8 @@
+composition:
+- id: walls
+  shape:
+    heightmap:
+      image: $(file fit_lab_sim.pgm)
+      height: 2
+      resolution: 0.05
+      pose: { x: -50.0, y: -50.0, z: 0 }
