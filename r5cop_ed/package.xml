@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>r5cop_ed</name>
+  <version>0.0.0</version>
+  <description>The r5cop_ed package</description>
+
+  <maintainer email="zdenal@todo.todo">zdenal</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>ed</build_depend>
+  <run_depend>ed</run_depend>
+
+</package>

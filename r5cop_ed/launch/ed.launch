@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <env name="ED_MODEL_PATH" value="$(find r5cop_ed)/worlds"/>
+  <node pkg="ed" type="ed" name="ed_server" args="$(find r5cop_ed)/worlds/ed_fit_lab_sim.yaml" output="screen"/>
+  <node pkg="ed_gui_server" type="ed_rviz_publisher" name="ed_rviz_publisher" output="screen"/>
+
+</launch>
