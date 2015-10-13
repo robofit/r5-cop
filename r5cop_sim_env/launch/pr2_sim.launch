@@ -3,12 +3,13 @@
 
   <arg name="port"/>
   <env name="GAZEBO_MASTER_URI" value="http://localhost:$(arg port)"/>
+  <arg name="enable_loc" default="true"/>
 
   <include file="$(find r5cop_sim_env)/launch/fit_lab.launch" />
   <include file="$(find pr2_gazebo)/launch/pr2.launch" />
   <include file="$(find r5cop_sim_env)/launch/spawn_objects.launch" />
   
-  <include file="$(find r5cop_navigation)/launch/pr2_nav.launch"/>
+  <include if="$(arg enable_loc)" file="$(find r5cop_navigation)/launch/pr2_nav.launch"/>
   
   <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" output="screen">
     <remap from="cloud_in" to="/head_mount_kinect/depth/points"/>
